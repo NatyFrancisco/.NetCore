@@ -1,0 +1,140 @@
+﻿@page
+@model Practica_No3.Pages.CajeroModel
+
+
+@{
+
+
+    //Declaracion de los billetes
+    int billetes_de_100 = 0;
+    int billetes_de_500 = 0;
+    int billetes_de_1000 = 0;
+    int transaccion = 1000;
+
+
+    //Variable que expresa el dinero a retirar
+    int monto = 2000;
+
+    //Igualamos la cantidad de dinero al monto
+    int cant = 0;
+    cant = monto;
+
+    //Igualamos la cantidad de dinero al monto
+
+    //Proceso (Agregamos el limite total del dinero disponible)
+    if (monto <= 28400 && monto > 0)
+    {
+
+        //Proceso de los billetes de 1000
+        if (monto / 1000 > 9)
+        {
+            billetes_de_1000 = 9;
+            monto = monto - 1000 * 9;
+        }
+        else
+        {
+            billetes_de_1000 = monto / 1000;
+            monto = monto - 1000 * billetes_de_1000;
+        }
+        //Proceso de los billetes de 500
+        if (monto / 500 > 19)
+        {
+            billetes_de_500 = 19;
+            monto = monto - 500 * 19;
+        }
+        else
+        {
+            billetes_de_500 = monto / 500;
+            monto = monto - 500 * billetes_de_500;
+        }
+
+        //Proceso de los billetes de 100
+
+        if (monto / 100 > 99)
+        {
+            billetes_de_100 = 99;
+            monto = monto - 100 * 99;
+        }
+        else
+        {
+            billetes_de_100 = monto / 100;
+            monto = monto - 100 * billetes_de_100;
+        }
+    }
+
+    var fondos = "";
+    //Establecemos el limite de dinero disponible
+    if (monto > 28400)
+
+    {
+
+        fondos = "No hay fondos suficientes. El total de monto disponible";
+    }
+    else
+    {
+        fondos = "Hay fondos suficientes";
+    }
+
+    string mil;
+    string quinientos;
+    string cien;
+    //Salida estandar
+
+
+    mil = "Billetes de 1000 : " + billetes_de_1000;
+    quinientos = "Billetes de 500 : " + billetes_de_500;
+    cien = "Billetes de 100 : " + billetes_de_100;
+
+
+    var transaccionMsm = "";
+    if (transaccion <= 2000)
+    {
+        transaccionMsm = "La transaccion fue realizada con exito";
+    }
+    else
+    {
+        transaccionMsm = "La transaccion no fue realizada con exito.";
+    }
+
+}
+
+<style>
+  
+
+    .titulo {
+        color: darkcyan;
+    }
+</style>
+
+<h1>Cajero automatico del banco ABC</h1>
+<p>
+    Cree una pagina con un formulario que funcione como cajero automático
+    para el banco ABC. El cajero tendrá un límite de billetes descrito a continuación:
+    9 de 1000, 19 de 500, 99 de 100
+    El cajero debe solicitar Banco y monto a retirar. Si el banco es ABC el limite de
+    retiro son 10,000 y 2000 pesos por transacción en caso contrario.
+    El cajero debe informar si el monto solicitado no puede ser dispensado o si
+    excede el límite de transacción. Y debe hacer la distribución de los billetes de
+    acuerdo al monto. Por ejemplo, si el usuario solicita 3,900 y hay disponibilidad en
+    todos los billetes, el cajero debe dispensar 3 billetes de mil, 1 de quinientos y 4 de
+    cien.
+</p>
+
+
+
+<h4 class="titulo">Retiros</h4>
+<form class="label">
+    
+    <label><b>El monto es:</b>  @cant</label><br />
+    <label><b>Billetes de cien:</b>  @cien</label><br />
+    <label><b>Billetes de quinientos:</b>  @quinientos</label><br />
+    <label><b>Billetes de mil:</b>  @mil</label><br />
+    <label><b>Estado de los fondos:</b>  @fondos</label><br />
+    <br />
+</form>
+<h4 class="titulo">Transacciones</h4>
+<form>
+
+    <label><b>Monto de la transaccion:</b>  @transaccion</label><br />
+    <label><b>Estado de la transaccion:</b>  @transaccionMsm</label>
+</form>
