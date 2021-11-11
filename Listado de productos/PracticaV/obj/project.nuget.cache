@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LaCKYgYtBvlkhwaKXErRxOookcKjVmKkpzsiCw2CeXYtkrJt0/Osq589qxNv7bfoYxd8R9/jzr3K+c3ucv8WXg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Intel\\Documents\\Cursos\\Compuciencias\\ASP .NET Core\\Semana IV\\Listado de productos\\PracticaV\\PracticaV.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Intel\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}
