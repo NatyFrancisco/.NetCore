@@ -55,7 +55,7 @@ namespace PractivaIV
             double calculoDeITBIS = CalcularITBIS(precio: 100);
             Console.WriteLine("El itbis es: " + calculoDeITBIS);
 
-            // Espera
+            
 
             Console.WriteLine("\n***********************************************");
             Console.WriteLine("Metodo lambda de la fecha");
