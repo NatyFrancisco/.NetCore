@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dia4", "Dia4\Dia4.csproj", "{298EDF47-DF51-4856-81E6-2557D8BD2867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dia4.Core", "Dia4.Core\Dia4.Core.csproj", "{2F7BDB46-D5C0-4171-80F2-2010E343D4A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dia4.Data", "Dia4.Data\Dia4.Data.csproj", "{8AC24853-2960-469B-828F-65C07F8474E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{298EDF47-DF51-4856-81E6-2557D8BD2867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298EDF47-DF51-4856-81E6-2557D8BD2867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298EDF47-DF51-4856-81E6-2557D8BD2867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298EDF47-DF51-4856-81E6-2557D8BD2867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F7BDB46-D5C0-4171-80F2-2010E343D4A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F7BDB46-D5C0-4171-80F2-2010E343D4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F7BDB46-D5C0-4171-80F2-2010E343D4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F7BDB46-D5C0-4171-80F2-2010E343D4A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC24853-2960-469B-828F-65C07F8474E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC24853-2960-469B-828F-65C07F8474E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC24853-2960-469B-828F-65C07F8474E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC24853-2960-469B-828F-65C07F8474E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAB50909-7A7D-439C-9867-6E40C3FEDD7B}
+	EndGlobalSection
+EndGlobal

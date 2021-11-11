@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Lista de productos</h1>
+
+
+@*CREAMOS LA TABLA*@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product name</th>
+            <th>Unit price</th>
+            <th>Categoria</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+   <tbody>
+
+       @*LLAMAMOS LAS PROPIEDADES*@
+       @*Renderizamos con un foreach*@
+       @foreach(var product in Model.products)
+            {
+       <tr>
+           <td>@product.Id</td>
+           <td>@product.productName</td>
+           <td>@product.UnitPrice</td>
+           <td>@product.Category</td>
+           @*Gelper asp-page*@
+       <td>
+
+           <a asp-page="./Detail" asp-route-id=@product.Id class="btn btn-warning">Detail</a>
+           <a asp-page="./Edit" asp-route-id=@product.Id class="btn btn-info">Edit</a>
+       </td>
+       </tr>
+            }
+   </tbody>
+</table>

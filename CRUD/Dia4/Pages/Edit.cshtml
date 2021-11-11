@@ -1,0 +1,30 @@
+﻿@page "{id:int}"
+@model Dia4.Pages.EditModel
+@{
+}
+
+<h1>Edit</h1>
+
+@*HACEMOS VALIDACIONES PARA PODER GUARDAR LOS CAMBIOS*@
+<form method="post">
+    @*El hidden pone el campo oculto*@
+    <input class="form-control" type="hidden" asp-for="Product.Id" />
+
+    <label asp-for="Product.productName">Product name</label>
+    <input class="form-control" type="text" asp-for="Product.productName" />
+    @*Validacion. Dice que el campo es requerido*@
+    <span asp-validation-for="Product.productName" class="text-danger"></span>
+
+
+    <label>Unit price</label>
+    <input class="form-control" type="text" asp-for="Product.UnitPrice" />
+
+    <label>Category</label>
+
+    @* asp-for se usa como un enlace de datos con la propiedad del modelo. Especifica la propiedad del modelo que se vee vinculado*@
+    @*El asp-items muestra todos los elementos*@
+    <select asp-for="Product.Category" asp-items="Model.Categories" class="form-control">
+    </select><br />
+
+    <button type="submit" class="btn btn-primary">Save changes</button>
+</form>

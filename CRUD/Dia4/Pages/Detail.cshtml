@@ -1,0 +1,22 @@
+﻿@page "{id:int}"
+@model Dia4.Pages.DetailModel
+@{
+}
+
+<h1>Details</h1>
+<p><b>Id:</b> @Model.product.Id
+    </p>
+
+<p>
+    <b>Product Name:</b> @Model.product.productName
+</p>
+
+<p>
+    <b>Unit Price:</b> $@Model.product.UnitPrice
+</p>
+
+<p>
+    <b>Categoria:</b> @Model.product.Category
+</p>
+
+<a asp-page="./Index" class="btn btn-primary">Products List</a>
