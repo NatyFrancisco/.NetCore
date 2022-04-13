@@ -1,0 +1,121 @@
+﻿@model NetBanking.Models.DB.Cuentum
+
+@{
+    ViewBag.Title = "Creacion de cuentas";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NetBanking</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <div align="left"><img src="~/imagenes/logo.jpeg" width="110" height="110" /></div>
+        <div align="right">
+            <img src="~/imagenes/rd.png" width="50" height="50" />
+            <input class="border col-sm-2" type="text" value="Buscar" />
+            <input type="submit" class="btn btn-danger" value="Buscar" />
+        </div>
+        <div align="right">
+            <a href="https://migracion.gob.do/contacto/">Contacto </a>
+            <a href="https://migracion.gob.do/mapa-de-sitio/">Ubicacion</a>
+        </div>
+
+
+        <nav style="background-color:red" class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3">
+            <div class="container">
+
+
+
+                <!--PAGINA DE INICIO-->
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><font color="white">NetBanking</font></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        @*LOGIN*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Home/Index"><font color="white">Login</font></a>
+                        </li>
+
+                        @*PANTALLA PRINCIPAL*@
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Cuenta/Index"><font color="white">Pantalla principal</font></a>
+                        </li>
+
+                        @*PANTALLA DE TRANSFERENCIA*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Transferencia/Nuevo"><font color="white">Transferencias bancarias</font></a>
+                        </li>
+
+                        @*PANTALLA DE HISTORIAL*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Historial/Index"><font color="white">Historial de transferencias</font></a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+</body>
+
+</html>
+
+<p class="text-center"><strong>Registra tus datos </strong></p>
+<hr />
+
+
+
+<!--Creacion del formulario-->
+@using (Html.BeginForm("Nuevo", "Cuenta", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+
+
+
+            <div>
+
+                <label><strong>No. de Cuenta:</strong></label><br />
+                @Html.TextBoxFor(d => d.NoCuenta, "", new { @class = "form-control col-md-4" })<br />
+
+
+                @Html.ValidationMessageFor(d => d.NoCuenta, null, new { @class = "red" })
+            </div>
+
+
+            <div>
+
+                <label><strong>Balance:</strong></label><br />
+                @Html.TextBoxFor(d => d.Balance, "", new { @class = "form-control col-md-4" })<br />
+
+                @Html.ValidationMessageFor(d => d.Balance, null, new { @class = "red" })
+            </div>
+
+            <br />
+
+            <a class="btn " href="~/User/Nuevo" style="background-color:black">Cancelar</a>
+            <!--Creacion del boton guardar-->
+
+
+            <input value="Guardar" class="btn btn-danger" type="submit" href="~/Home/Inicio" />
+        </div>
+
+    </div>
+
+}

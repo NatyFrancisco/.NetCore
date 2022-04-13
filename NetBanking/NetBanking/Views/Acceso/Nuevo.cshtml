@@ -1,0 +1,109 @@
+﻿@model NetBanking.Models.DB.User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NetBanking</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+
+        <div align="right">
+            <img src="~/imagenes/rd.png" width="50" height="50" />
+            <input class="border col-sm-2" type="text" value="Buscar" />
+            <input type="submit" class="btn btn-danger" value="Buscar" />
+        </div>
+        <div align="right">
+            <a href="https://migracion.gob.do/contacto/">Contacto </a>
+            <a href="https://migracion.gob.do/mapa-de-sitio/">Ubicacion</a>
+        </div>
+
+
+        <nav class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3">
+
+
+
+            <div class="container">
+                <div><img src="~/imagenes/logo.jpeg" width="80" height="80" /></div>
+
+
+                <!--PAGINA DE INICIO-->
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><font color="red"> NetBanking</font></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+
+                        <!--PAGINA DE ACCESO-->
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index"><font color="red">Login</font></a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+</body>
+
+</html>
+<p class="text-center"><strong>Acceso a tu cuenta personal </strong></p>
+<hr />
+
+<section class="section ">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                <div class="card card-primary">
+                    <form class="text-center">
+
+                        <div class="text-center" style="background-color: white">
+                            <br />
+
+
+
+                            <p><strong>Ingrese su usuario:</strong></p>
+                            <center>
+                                @Html.TextBoxFor(d => d.Usuario, "", new { @class = "form-control col-md-6" })<br />
+
+                                @Html.ValidationMessageFor(d => d.Usuario, null, new { @class = "red" })
+                                @*<input type="text" class="form-control col-md-6 text-center" required />*@
+                            </center>
+
+                            <p><strong>Ingrese su contraseña:</strong></p>
+
+                            <center>
+                                <input type="password" name="password" class="form-control col-md-6" />
+
+                                @*<input type="password" class="form-control col-md-6 text-center" required />*@
+                            </center>
+                            <br />
+                            <a class="btn btn-danger col-md-6" href="~/Cuenta/Index"><font color="white">Ingresar</font></a>
+                            <br />
+                            <a href="">¿Olvidaste tu contraseña?</a>
+                            <p><font color="silver">¿Aún no tienes una cuenta?</font></p>
+                            <div>
+                                <a href="~/User/Nuevo" class="btn" style="background-color:black"><font color="white">Registrate</font></a>
+
+                            </div>
+                            <br />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

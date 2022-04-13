@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+    <head  >
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - NetBanking</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+    <body>
+        <table style="background-color:red" width="1500" height="30" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="739" background="IMAGEN DE FONDO.jpg">
+
+                    @* LETRAS EN MOVIMIENTOS *@
+                    @*<MARQUEE>
+                        <font color="white" size="5" face="Verdana, Arial, Helvetica, sans-serif">
+                            Aplicacion bancaria
+                        </font>
+                    </MARQUEE>*@
+
+                </td>
+            </tr>
+        </table>
+
+                <div  class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+        <nav style="background-color:red">
+
+        </nav>
+           
+            <footer style="background-color:black" class="border-top footer text-muted">
+
+                <div class="container">
+                    &copy; 2021 - NetBanking - <a asp-area="" asp-controller="Home" asp-action="Privacy"><font color="white">Privacy</font></a>
+                    <br />
+                    <br />
+                </div>
+            </footer>
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

@@ -1,0 +1,160 @@
+﻿
+@model NetBanking.Models.DB.User
+
+@{
+    ViewData["Title"] = "Registros de cuentas";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NetBanking</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <div align="left"><img src="~/imagenes/logo.jpeg" width="110" height="110" /></div>
+        <div align="right">
+            <img src="~/imagenes/rd.png" width="50" height="50" />
+            <input class="border col-sm-2" type="text" value="Buscar" />
+            <input type="submit" class="btn btn-danger" value="Buscar" />
+        </div>
+        <div align="right">
+            <a href="https://migracion.gob.do/contacto/">Contacto </a>
+            <a href="https://migracion.gob.do/mapa-de-sitio/">Ubicacion</a>
+        </div>
+
+
+        <nav style="background-color:red" class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3">
+            <div class="container">
+
+
+
+                <!--PAGINA DE INICIO-->
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><font color="white">NetBanking</font></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        @*LOGIN*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Home/Index"><font color="white">Login</font></a>
+                        </li>
+
+                        @*PANTALLA PRINCIPAL*@
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Cuenta/Index"><font color="white">Pantalla principal</font></a>
+                        </li>
+
+                        @*PANTALLA DE TRANSFERENCIA*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Transferencia/Nuevo"><font color="white">Transferencias bancarias</font></a>
+                        </li>
+
+                        @*PANTALLA DE HISTORIAL*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Historial/Index"><font color="white">Historial de transferencias</font></a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+</body>
+
+</html>
+
+<p class="text-center"><strong>Registra tus datos </strong></p>
+<hr />
+
+
+
+
+@using (Html.BeginForm("Nuevo", "User", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+
+
+            @*Div para agrupar cada elemento*@
+
+
+            <div>
+
+                <label><strong>Cedula:</strong></label><br />
+                @Html.TextBoxFor(d => d.Cedula, "", new { @class = "form-control col-md-4" })<br />
+
+
+                @Html.ValidationMessageFor(d => d.Cedula, null, new { @class = "red" })
+            </div>
+
+
+            <div>
+
+                <label><strong>Nombre:</strong></label><br />
+                @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control col-md-4" })<br />
+
+                @*Helper que indica errores*@
+                @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "red" })
+            </div>
+
+
+            <div>
+
+                <label><strong>Apellido:</strong></label><br />
+                @Html.TextBoxFor(d => d.Apellido, "", new { @class = "form-control col-md-4" })<br />
+
+                @*Helper que indica errores*@
+                @Html.ValidationMessageFor(d => d.Apellido, null, new { @class = "red" })
+            </div>
+
+
+            <div>
+
+                <label><strong>Usuario:</strong></label><br />
+                @Html.TextBoxFor(d => d.Usuario, "", new { @class = "form-control col-md-4" })<br />
+
+                @*Helper que indica errores*@
+                @Html.ValidationMessageFor(d => d.Usuario, null, new { @class = "red" })
+            </div>
+
+
+            <div>
+
+                <label><strong>Password:</strong></label><br />
+                @Html.TextBoxFor(d => d.Passw, "", new { @class = "form-control col-md-4" })<br />
+
+                @*Helper que indica errores*@
+                @Html.ValidationMessageFor(d => d.Passw, null, new { @class = "red" })
+            </div>
+
+
+
+
+
+            <br />
+
+            <a class="btn btn-dark" href="~/Home/Index">Cancelar</a>
+
+
+            <input value="Continuar" class="btn btn-danger" type="submit" />
+
+        </div>
+
+    </div>
+
+}

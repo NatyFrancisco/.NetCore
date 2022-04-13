@@ -1,0 +1,136 @@
+﻿@model List<NetBanking.Models.DB.Cuentum>
+
+@{
+
+
+    ViewData["Title"] = "Pantalla principal";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NetBanking</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <div align="left"><img src="~/imagenes/logo.jpeg" width="110" height="110" /></div>
+        <div align="right">
+            <img src="~/imagenes/rd.png" width="50" height="50" />
+            <input class="border col-sm-2" type="text" value="Buscar" />
+            <input type="submit" class="btn btn-danger" value="Buscar" />
+        </div>
+        <div align="right">
+            <a href="https://migracion.gob.do/contacto/">Contacto </a>
+            <a href="https://migracion.gob.do/mapa-de-sitio/">Ubicacion</a>
+        </div>
+
+
+        <nav style="background-color:red" class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3">
+            <div class="container">
+
+
+
+                <!--PAGINA DE INICIO-->
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><font color="white">NetBanking</font></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        @*LOGIN*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Home/Index"><font color="white">Login</font></a>
+                        </li>
+
+                        @*PANTALLA PRINCIPAL*@
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Cuenta/Index"><font color="white">Pantalla principal</font></a>
+                        </li>
+
+                        @*PANTALLA DE TRANSFERENCIA*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Transferencia/Nuevo"><font color="white">Transferencias bancarias</font></a>
+                        </li>
+
+                        @*PANTALLA DE HISTORIAL*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Historial/Index"><font color="white">Historial de transferencias</font></a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+</body>
+
+</html>
+
+
+
+<p class="text-center"><strong>Pantalla principal </strong></p>
+<hr />
+<br />
+<a href="~/Transferencia/Nuevo" class="btn btn-danger text-lg-right">Realizar transferencias</a>
+
+
+
+<br />
+<br />
+
+<p><b>Resumen de su producto</b>.</p>
+
+
+<br />
+
+
+
+<div class="row">
+    <!--Listado de 12 columnas-->
+    <div class="col-md-12">
+        <!--Creacion de la tabla-->
+        <table class="table">
+
+            <tr>
+                <th>ID</th>
+                <th>No. de Cuenta</th>
+                <th>Balance</th>
+
+            </tr>
+
+            @*Foreach para traer los datos*@
+            @foreach (var oCuenta in Model)
+            {
+                <tr>
+                    <td>@oCuenta.Id</td>
+                    <td>@oCuenta.NoCuenta</td>
+                    <td>@oCuenta.Balance</td>
+
+
+
+                </tr>
+
+
+
+
+            }
+
+
+
+        </table>
+
+    </div>
+</div>
