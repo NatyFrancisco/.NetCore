@@ -1,0 +1,60 @@
+﻿@model WebAppMigracion0._1.Models.BD.ListTablaSolicitud
+@{
+    ViewBag.Title = "Editar solicitudes";
+}
+
+
+<p style="text-align:center"><strong>   Edite el listado de registros de personas</strong></p>
+<hr />
+
+@using (Html.BeginForm("Editar", "Solicitud", FormMethod.Post))
+
+
+{
+    <div class="row">
+        <div class="col-md-12">
+
+
+
+            @*Cod. para guardar el ID*@
+            @Html.HiddenFor(d => d.Id)
+
+
+            @*Automaticamente se llenan los controles*@
+
+
+            <div>
+                <label><strong>Estado de la solicitud:</strong></label>
+                <br />
+                @Html.RadioButton("NombreEstado", "Abiertas")Abiertas
+                <br />
+                @Html.RadioButton("NombreEstado", "Aprobadas")Aprobadas
+                <br />
+                @Html.RadioButton("NombreEstado", "Canceladas")Canceladas
+
+                @Html.ValidationMessageFor(d => d.NombreEstado, null, new { @class = "red" })
+
+            </div>
+
+
+            <div>
+
+                <label><strong>Fecha de creacion</strong></label><br />
+                @Html.EditorFor(d => d.FechaCreacion, "", new { @class = "form-control" })<br />
+
+                @*Helper que indica errores*@
+                @Html.ValidationMessageFor(d => d.FechaCreacion, null, new { @class = "red" })
+            </div>
+
+
+            <br />
+
+            <div style="text-align:right;">
+                <input value="Guardar cambios" class="btn btn-primary" type="submit" />
+
+            </div>
+
+
+        </div>
+    </div>
+}

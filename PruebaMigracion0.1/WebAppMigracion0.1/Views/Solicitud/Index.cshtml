@@ -1,0 +1,66 @@
+﻿@model List<WebAppMigracion0._1.Models.BD.ListTablaSolicitud>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Listado de solicitudes";
+    
+
+}
+
+
+
+
+<!--Boton nuevo-->
+<div class="row" style="text-align:left; padding:5px;">
+    <a href="~/Solicitud/Nuevo" class="btn btn-primary">Agregar nuevas solicitudes</a>
+</div>
+
+<p style="text-align:center"><strong>Listado de todas las solicitudes</strong></p>
+<hr />
+
+<div class="row">
+    <!--Listado de 12 columnas-->
+    <div class="col-md-12">
+        <!--Creacion de la tabla-->
+        <table class="table table-striped">
+
+            <tr>
+
+                <th>Id</th>
+                <th>Estado de solicitud</th>
+                <th>Fecha de entrada</th>
+
+                <th>Opciones</th>
+            </tr>
+
+            <!--Foreach para traer los datos-->
+            @foreach (var oElemento in Model)
+            {
+                <tr>
+
+                    <td>@oElemento.Id</td>
+                    <td>@oElemento.NombreEstado</td>
+                    <td>@oElemento.FechaCreacion</td>
+
+
+                    <td>
+                        @*Creacion de los botones*@
+                        <a class="btn btn-dark" href="~/Solicitud/Editar/@oElemento.Id">Editar</a>
+                        <a class="btn btn-danger" href="~/Solicitud/Eliminar/@oElemento.Id">Eliminar</a>
+
+                    </td>
+
+                </tr>
+
+
+
+
+            }
+
+
+
+        </table>
+
+    </div>
+</div>
